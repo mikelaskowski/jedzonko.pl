@@ -58,7 +58,7 @@ public class Restaurant extends BaseEntity {
     }
 
     public void setDeleted(boolean deleted) {
-        deleted = deleted;
+        this.deleted = deleted;
     }
 }
 
