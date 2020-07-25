@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.awt.image.BufferedImage;
 
 @RestController
-@RequestMapping("/barcodes")
+@RequestMapping("/barcode")
 public class BarcodesController {
 
     @ResponseStatus(HttpStatus.OK)
