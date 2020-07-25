@@ -12,5 +12,5 @@ public interface MealRepository extends CrudRepository<Meal, Long> {
     @Override
     List<Meal> findAll();
 
-    Set<Meal> findAllByRestaurantId(Long id);
+    Set<Meal> findAllByRestaurant_Id(Long id);
 }

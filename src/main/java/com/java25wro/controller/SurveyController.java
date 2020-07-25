@@ -12,7 +12,6 @@ import java.util.List;
 @RequestMapping(value = "/survey")
 public class SurveyController {
 
-
     private SurveyServiceInterface surveyServiceInterface;
 
     @Autowired

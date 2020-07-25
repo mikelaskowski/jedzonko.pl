@@ -31,7 +31,7 @@ public class MealService implements IMealService {
     @Transactional
     @Override
     public Set<Meal> findMealsByRestaurantId(Long restaurantId) {
-        return mealRepository.findAllByRestaurantId(restaurantId);
+        return mealRepository.findAllByRestaurant_Id(restaurantId);
     }
 
     @Transactional

@@ -38,6 +38,6 @@ public class RestaurantService implements IRestaurantService {
 
     @Override
     public Optional<Restaurant> findByName(String name) {
-        return repository.findByName(name);
+        return repository.findByRestaurantName(name);
     }
 }

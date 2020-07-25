@@ -23,9 +23,9 @@ public class OrderedMeals {
     }
 
     public OrderedMeals(Order order, Meal meal, int numberOfTheSameMeals) {
-    this.order=order;
-    this.meal=meal;
-    this.numberOfTheSameMeals=numberOfTheSameMeals;
+        this.order = order;
+        this.meal = meal;
+        this.numberOfTheSameMeals = numberOfTheSameMeals;
     }
 
     public OrderedMealsKey getId() {

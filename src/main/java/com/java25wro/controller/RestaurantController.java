@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
+@RequestMapping(value = "/restaurants")
 public class RestaurantController {
     private final IRestaurantService restaurantService;
     @Autowired

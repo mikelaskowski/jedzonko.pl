@@ -3,14 +3,13 @@ package com.java25wro.model;
 import com.java25wro.common.BaseEntity;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Restaurant extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    Long Id;
+
     @Column( unique = true)
     String restaurantName;
     String restaurantAdress;
@@ -18,12 +17,7 @@ public class Restaurant extends BaseEntity {
     private boolean deleted = false;
 
     @OneToMany(mappedBy = "restaurant")
-    private Set<Meal> meals;
-
-    @Override
-    public Long getId() {
-        return Id;
-    }
+    private Set<Meal> meals = new HashSet<>();
 
     public Restaurant() {
     }
@@ -31,10 +25,6 @@ public class Restaurant extends BaseEntity {
     public Restaurant(String restaurantName, String restaurantAdress) {
         this.restaurantAdress = restaurantAdress;
         this.restaurantName = restaurantName;
-    }
-
-    public void setId(Long id) {
-        Id = id;
     }
 
     public String getRestaurantName() {
@@ -59,6 +49,11 @@ public class Restaurant extends BaseEntity {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+
+    public Set<Meal> getMeals() {
+        return meals;
     }
 }
 

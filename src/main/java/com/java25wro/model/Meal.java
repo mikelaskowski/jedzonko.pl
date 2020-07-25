@@ -16,7 +16,7 @@ public class Meal extends BaseEntity {
     private String details;
 
     @ManyToOne
-    @JoinColumn(name = "Id")
+    @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "meal")
