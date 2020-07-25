@@ -13,7 +13,10 @@ public class Meal extends BaseEntity {
     private String description;
     private String imgPath;
     private String details;
-    private Long restaurantId;
+
+    @ManyToOne
+    @JoinColumn(name = "Id")
+    private Restaurant restaurant;
 
     private boolean isDeleted;
 
@@ -77,12 +80,12 @@ public class Meal extends BaseEntity {
     }
 
 
-    public Long getRestaurantId() {
-        return restaurantId;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
+    public void setRestaurantId(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
 }
