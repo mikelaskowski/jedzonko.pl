@@ -4,6 +4,7 @@ import com.java25wro.common.BaseEntity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 public class Meal extends BaseEntity {
@@ -17,6 +18,9 @@ public class Meal extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "Id")
     private Restaurant restaurant;
+
+    @OneToMany(mappedBy = "meal")
+    Set<OrderedMeals> orderedMeals;
 
     private boolean isDeleted;
 

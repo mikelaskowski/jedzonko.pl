@@ -1,4 +1,4 @@
-package com.java25wro.service;
+package com.java25wro.service.meal;
 
 import com.java25wro.model.Meal;
 import com.java25wro.repository.MealRepository;
