@@ -10,6 +10,7 @@ import java.util.Set;
 
 
 @RestController
+@CrossOrigin(value = "*")
 @RequestMapping(value = "/meal")
 public class MealController {
 

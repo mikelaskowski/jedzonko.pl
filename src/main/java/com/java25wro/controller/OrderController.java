@@ -3,14 +3,12 @@ package com.java25wro.controller;
 import com.java25wro.model.OrderedMeals;
 import com.java25wro.service.order.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
+@CrossOrigin(value = "*")
 @RequestMapping(value = "/order")
 public class OrderController {
 
