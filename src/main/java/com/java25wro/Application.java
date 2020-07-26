@@ -2,7 +2,9 @@ package com.java25wro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*" )
 @SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 public class Application {
 
