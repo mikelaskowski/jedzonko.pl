@@ -31,8 +31,16 @@ public class PdfCreator {
         contentStream.drawImage(image, 0, 0);
         contentStream.close();
 
-        document.save("newPdfDoc.pdf");
+
+       /* // (1) get today's date
+        Date today = Calendar.getInstance().getTime();
+        SimpleDateFormat currentDateFormatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+        String date = currentDateFormatter.format(today);*/
+        //todo add timestamp to file name
+        String filename = "Order "+barcode+ " "  + ".pdf";
+        document.save(filename);
         document.close();
+
     }
 
 }

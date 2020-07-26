@@ -52,5 +52,6 @@ public class GoogleDriveService {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 
         //todo https://developers.google.com/drive/api/v3/quickstart/java
+        //todo https://o7planning.org/en/11889/manipulating-files-and-folders-on-google-drive-using-java
     }
 }
