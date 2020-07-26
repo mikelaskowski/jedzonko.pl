@@ -13,5 +13,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.3.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "Jedzonko.pl"
+          heroku_app_name: "jedzonko.pl"
           heroku_email: "mikelaskowski@o2.pl"
