@@ -18,6 +18,7 @@ public class Customer {
     private Long phoneNumber;
     private String email;
     private boolean isDeleted;
+
     public Customer(String name, String surname, String street, Long numberOfStreet, String city, Long phoneNumber, String email, boolean isDeleted) {
         this.name = name;
         this.surname = surname;

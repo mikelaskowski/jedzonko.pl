@@ -26,16 +26,17 @@ public class CustomerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer add(@RequestBody Customer customer) throws IOException, InterruptedException {
+    public Customer add(@RequestBody Customer customer) {
         return customerRepository.save(customer);
     }
 
     @GetMapping("/{id}")
     public Customer findById(@PathVariable Long id) {
-        return customerRepository.findById(id).orElse(null);
+        return service.findById(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         service.deleteById(id);
     }
