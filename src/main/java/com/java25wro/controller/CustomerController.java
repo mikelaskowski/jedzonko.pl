@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -15,16 +17,16 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping(value = "/all")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public Iterable<Customer> getCustomers() {
         Iterable<Customer> customers = customerRepository.findAll();
         return customers;
     }
 
-    @PostMapping("/add")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer add(@RequestBody Customer customer) {
+    public Customer add(@RequestBody Customer customer) throws IOException, InterruptedException {
         return customerRepository.save(customer);
     }
 

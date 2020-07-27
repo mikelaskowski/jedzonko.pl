@@ -11,8 +11,9 @@ public class Restaurant extends BaseEntity {
 
 
     @Column( unique = true)
-    String restaurantName;
-    String restaurantAdress;
+    String name;
+    String address;
+    String email;
 
     private boolean deleted = false;
 
@@ -22,25 +23,25 @@ public class Restaurant extends BaseEntity {
     public Restaurant() {
     }
 
-    public Restaurant(String restaurantName, String restaurantAdress) {
-        this.restaurantAdress = restaurantAdress;
-        this.restaurantName = restaurantName;
+    public Restaurant(String restaurantName, String address) {
+        this.address = address;
+        this.name = restaurantName;
     }
 
-    public String getRestaurantName() {
-        return restaurantName;
+    public String getName() {
+        return name;
     }
 
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRestaurantAdress() {
-        return restaurantAdress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setRestaurantAdress(String restaurantAdress) {
-        this.restaurantAdress = restaurantAdress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public boolean deleted() {
