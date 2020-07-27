@@ -18,11 +18,13 @@ public class OrderController {
 
     private IOrderedMealsService orderService;
     private OrderRepository orderRepository;
+    private EmailService emailService;
 
     @Autowired
-    public OrderController(IOrderedMealsService orderService, OrderRepository orderRepository){
+    public OrderController(IOrderedMealsService orderService, OrderRepository orderRepository, EmailService emailService){
         this.orderService=orderService;
         this.orderRepository=orderRepository;
+        this.emailService=emailService;
     }
 
 
@@ -35,7 +37,8 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public Order save(@RequestBody Order order) throws IOException, InterruptedException {
         orderRepository.save(order);
-        EmailService.sendOrderConfirmationEmail(order);
+        emailService.sendOrderConfirmationEmail(order);
         return order;
+        //todo Customer Id
     }
 }

@@ -6,12 +6,10 @@ import com.java25wro.model.Order;
 import com.java25wro.model.OrderedMeals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -24,11 +22,11 @@ import java.util.Set;
 public class EmailService {
 
     @Autowired
-    private static SpringTemplateEngine thymeleafTemplateEngine;
+    private SpringTemplateEngine thymeleafTemplateEngine;
 
     private final static String orderConfirmationURL = "https://javawro25.herokuapp.com/mail";
 
-    public static void sendOrderConfirmationEmail(Order order) throws IOException, InterruptedException {
+    public  void sendOrderConfirmationEmail(Order order) throws IOException, InterruptedException {
         Long orderId = order.getId();
         Set<OrderedMeals> orderedMeals = order.getOrderedMeals();
         String customerName = order.getCustomer().getName();
@@ -42,10 +40,11 @@ public class EmailService {
         ctx.setVariable("orderId", orderId);
         ctx.setVariable("orderedMeals", orderedMeals);
         final String htmlBody = thymeleafTemplateEngine.process("email-orders.html", ctx);
-        sendEmail(from, to, htmlBody);
+        System.out.println(htmlBody);
+        //sendEmail(from, to, htmlBody);
     }
 
-    public static void sendEmail(String from, String to, String htmlBody) throws IOException, InterruptedException {
+    public  void sendEmail(String from, String to, String htmlBody) throws IOException, InterruptedException {
 
         Map<String, Object> params = new HashMap<>();
         params.put("from", from);
