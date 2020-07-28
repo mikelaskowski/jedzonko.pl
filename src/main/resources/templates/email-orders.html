@@ -5,12 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="${'Hello ' +name}">Example Hello name</p>
-<p th:text="${'Your order number: ' + orderId}">Example order</p>
+<p id="greeting" th:text="${'Hello ' +name}">Example Hello name</p>
+<p id="order-id" th:text="${'Your order number: ' + orderId}">Example order</p>
 
 <p>You have  successfully ordered below meals:</p>
 <ul>
-    <li th:each="meal : ${orderedMeals}" th:text="${meal}">Example Meal</li>
+    <li class="meal" th:each="orderedMeal : ${orderedMeals}" th:text="${orderedMeal.meal.name}">Example Meal</li>
 </ul>
 
 <p>

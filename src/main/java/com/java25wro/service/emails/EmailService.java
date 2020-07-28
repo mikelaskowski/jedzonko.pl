@@ -24,24 +24,33 @@ public class EmailService {
     @Autowired
     private SpringTemplateEngine thymeleafTemplateEngine;
 
-    private final static String orderConfirmationURL = "https://javawro25.herokuapp.com/mail";
+    private final static String emailServiceURL = "https://javawro25.herokuapp.com/mail";
 
-    public  void sendOrderConfirmationEmail(Order order) throws IOException, InterruptedException {
-        Long orderId = order.getId();
-        Set<OrderedMeals> orderedMeals = order.getOrderedMeals();
-        String customerName = order.getCustomer().getName();
+    public void sendOrderConfirmationEmail(Order order) throws IOException, InterruptedException {
+
         String to = order.getCustomer().getEmail();
 
         //todo Email from restaurant maybe? It can't be different now because it is register email to herokuapp service.
         String from = "dariasupinska@wp.pl";
+
+        String htmlBody = renderOrderConfirmationEmail(order);
+
+        sendEmail(from, to, htmlBody);
+    }
+
+    public String renderOrderConfirmationEmail(Order order) throws IOException, InterruptedException {
+        Long orderId = order.getId();
+        Set<OrderedMeals> orderedMeals = order.getOrderedMeals();
+        String customerName = order.getCustomer().getName();
+
 
         final Context ctx = new Context();
         ctx.setVariable("name", customerName);
         ctx.setVariable("orderId", orderId);
         ctx.setVariable("orderedMeals", orderedMeals);
         final String htmlBody = thymeleafTemplateEngine.process("email-orders.html", ctx);
-        System.out.println(htmlBody);
-        //sendEmail(from, to, htmlBody);
+
+        return htmlBody;
     }
 
     public  void sendEmail(String from, String to, String htmlBody) throws IOException, InterruptedException {
@@ -56,7 +65,7 @@ public class EmailService {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(inputJson))
-                .uri(URI.create(orderConfirmationURL))
+                .uri(URI.create(emailServiceURL))
                 .header("Content-Type", "application/json")
                 .build();
 
