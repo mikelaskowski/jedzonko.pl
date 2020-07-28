@@ -21,6 +21,11 @@ public class Order extends BaseEntity {
     public Order() {
     }
 
+    public Order(Set<OrderedMeals> orderedMeals, Customer customer, boolean isEmpty) {
+        this.orderedMeals = orderedMeals;
+        this.customer = customer;
+        this.isEmpty = isEmpty;
+    }
 
     public Set<OrderedMeals> getOrderedMeals() {
         return orderedMeals;
