@@ -7,6 +7,10 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class PdfCreator {
 
@@ -32,12 +36,12 @@ public class PdfCreator {
         contentStream.close();
 
 
-       /* // (1) get today's date
+        // (1) get today's date
         Date today = Calendar.getInstance().getTime();
-        SimpleDateFormat currentDateFormatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-        String date = currentDateFormatter.format(today);*/
+        SimpleDateFormat currentDateFormatter = new SimpleDateFormat("yyyy-MM-dd-HH_mm_ss");
+        String date = currentDateFormatter.format(today);
         //todo add timestamp to file name
-        String filename = "Order "+barcode+ " "  + ".pdf";
+        String filename = "Order "+barcode+ " " +date + ".pdf";
         document.save(filename);
         document.close();
 
