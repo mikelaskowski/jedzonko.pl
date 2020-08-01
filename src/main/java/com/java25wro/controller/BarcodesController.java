@@ -1,8 +1,8 @@
-package com.application.jedzonko.Controller;
+package com.java25wro.controller;
 
 
-import com.application.jedzonko.SavingOrdersToPDF.PdfCreator;
-import com.application.jedzonko.SavingOrdersToPDF.QRCodeGenerator;
+import com.java25wro.SavingOrdersToPDF.PdfCreator;
+import com.java25wro.SavingOrdersToPDF.QRCodeGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

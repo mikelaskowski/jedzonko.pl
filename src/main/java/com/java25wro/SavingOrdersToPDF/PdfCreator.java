@@ -1,4 +1,4 @@
-package com.application.jedzonko.SavingOrdersToPDF;
+package com.java25wro.SavingOrdersToPDF;
 
 
 import org.apache.pdfbox.pdmodel.PDDocument;
