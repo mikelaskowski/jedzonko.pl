@@ -53,6 +53,10 @@ public class BaseEntity {
         return that.hashCode() == this.hashCode();
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public int hashCode() {
         return uuid.hashCode();

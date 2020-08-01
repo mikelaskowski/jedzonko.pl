@@ -1,12 +1,10 @@
 package com.java25wro.repository;
 
-import com.java25wro.model.OrderedMeals;
+import com.java25wro.model.Order;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import java.util.Set;
 
 @Repository
-public interface OrderRepository extends CrudRepository<OrderedMeals, Long> {
+public interface OrderRepository extends CrudRepository<Order, Long> {
 
-    Set<OrderedMeals> findAllMealsByOrderId(Long orderId);
 }

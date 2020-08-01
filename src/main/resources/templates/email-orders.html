@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for email to Customer with order details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p id="greeting" th:text="${'Hello ' +name}">Example Hello name</p>
+<p id="order-id" th:text="${'Your order number: ' + orderId}">Example order</p>
+
+<p>You have  successfully ordered below meals:</p>
+<ul>
+    <li class="meal" th:each="orderedMeal : ${orderedMeals}" th:text="${orderedMeal.meal.name}">Example Meal</li>
+</ul>
+
+<p>
+    Regards, <br />
+    <em>The JavaWro25 Team</em>
+</p>
+</body>
+</html>
