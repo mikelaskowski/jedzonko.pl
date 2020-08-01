@@ -1,4 +1,4 @@
-package com.java25wro.SavingOrdersToPDF;
+package com.java25wro.utilities;
 
 
 import org.apache.pdfbox.pdmodel.PDDocument;

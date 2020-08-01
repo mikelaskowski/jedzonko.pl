@@ -1,4 +1,4 @@
-package com.java25wro.SavingOrdersToPDF;
+package com.java25wro.utilities;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;

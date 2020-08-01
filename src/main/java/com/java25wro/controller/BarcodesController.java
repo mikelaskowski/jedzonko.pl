@@ -1,8 +1,8 @@
 package com.java25wro.controller;
 
 
-import com.java25wro.SavingOrdersToPDF.PdfCreator;
-import com.java25wro.SavingOrdersToPDF.QRCodeGenerator;
+import com.java25wro.utilities.PdfCreator;
+import com.java25wro.utilities.QRCodeGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
