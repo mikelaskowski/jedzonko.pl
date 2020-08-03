@@ -26,8 +26,7 @@ public class MealService implements IMealService {
         return mealRepository.findAll();
     }
 
-    //TODO
-    //wyszukać wszystkie posiłki z danej restauracji
+    //TODO wyszukać wszystkie posiłki z danej restauracji
     @Transactional
     @Override
     public Set<Meal> findMealsByRestaurantId(Long restaurantId) {
