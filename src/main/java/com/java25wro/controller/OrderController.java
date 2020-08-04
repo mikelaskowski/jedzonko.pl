@@ -46,7 +46,6 @@ public class OrderController {
         orderService.saveOrderToGoogleDrive(order);
         emailService.sendOrderConfirmationEmail(order);
         return order;
-        //todo Insufficient Permission: Request had insufficient authentication scopes
         //todo Customer and MEal as ID not object in the JSON request body
     }
 }
