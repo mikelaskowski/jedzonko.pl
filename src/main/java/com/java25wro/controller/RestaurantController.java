@@ -26,7 +26,7 @@ public class RestaurantController {
 
     @GetMapping("/{name}")
     public Optional<Restaurant> findByName(@PathVariable String name){
-        return restaurantService.findByName(name);
+        return restaurantService.findByRestaurantName(name);
     }
 
     @GetMapping
@@ -36,7 +36,7 @@ public class RestaurantController {
 
     @DeleteMapping("/{name}")
     public void delete(@PathVariable String name){
-        Restaurant byName = restaurantService.findByName(name).orElse(new Restaurant("0","0"));
+        Restaurant byName = restaurantService.findByRestaurantName(name).orElse(new Restaurant("0","0"));
         restaurantService.delete(byName);
     }
 
