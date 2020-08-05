@@ -10,4 +10,4 @@ public interface IRestaurantService {
     void update(Restaurant restaurant);
     void delete(Restaurant restaurant);
     Set<Restaurant> findAll();
-    Optional<Restaurant> findByRestaurantName(String name);}
+    Optional<Restaurant> findByRestaurantId(Long id);}

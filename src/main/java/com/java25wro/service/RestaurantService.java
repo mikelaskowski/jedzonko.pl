@@ -37,8 +37,8 @@ public class RestaurantService implements IRestaurantService {
     }
 
     @Override
-    public Optional<Restaurant> findByRestaurantName(String name) {
-        return repository.findByRestaurantName(name);
+    public Optional<Restaurant> findByRestaurantId(Long id) {
+        return repository.findByRestaurantName(id);
     }
 }
 

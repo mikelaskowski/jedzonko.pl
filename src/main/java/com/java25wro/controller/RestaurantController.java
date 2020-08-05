@@ -24,9 +24,9 @@ public class RestaurantController {
         this.restaurantService.save(restaurant);
     }
 
-    @GetMapping("/{name}")
-    public Optional<Restaurant> findByName(@PathVariable String name){
-        return restaurantService.findByRestaurantName(name);
+    @GetMapping("/{id}")
+    public Optional<Restaurant> findByRestaurantId(@PathVariable Long id){
+        return restaurantService.findByRestaurantId(id);
     }
 
     @GetMapping
@@ -34,9 +34,9 @@ public class RestaurantController {
         return restaurantService.findAll();
     }
 
-    @DeleteMapping("/{name}")
-    public void delete(@PathVariable String name){
-        Restaurant byName = restaurantService.findByRestaurantName(name).orElse(new Restaurant("0","0"));
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        Restaurant byName = restaurantService.findByRestaurantId(id).orElse(new Restaurant("0","0"));
         restaurantService.delete(byName);
     }
 
