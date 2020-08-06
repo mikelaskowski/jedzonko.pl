@@ -11,6 +11,5 @@ import java.util.Set;
 public interface IRestaurantRepository extends CrudRepository<Restaurant, Long> {
     Set<Restaurant> findAllByDeletedFalse();
 
-    Optional<Restaurant> findByRestaurantId(Long id);
 }
 
