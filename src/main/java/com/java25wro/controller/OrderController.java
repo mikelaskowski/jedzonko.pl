@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(value = "*")
 @RequestMapping(value = "/order")
 public class OrderController {
 

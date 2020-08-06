@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(value = "*")
 @RequestMapping(value = "/restaurants")
 public class RestaurantController {
     private final IRestaurantService restaurantService;
