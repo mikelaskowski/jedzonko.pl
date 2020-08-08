@@ -59,12 +59,11 @@ public class GoogleDriveService {
      */
     private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
         // Load client secrets.
-        InputStream in = GoogleDriveService.class.getResourceAsStream("GOOGLE_APPLICATION_CREDENTIALS");
+        InputStream in = GoogleDriveService.class.getResourceAsStream("GOOGLE_CREDENTIALS");
         if (in == null) {
             throw new FileNotFoundException("Resource not found: " + "GOOGLE_APPLICATION_CREDENTIALS");
         }
-        JsonFactory factory = new JacksonFactory();
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(factory, new InputStreamReader(in,
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in,
                 Charset.defaultCharset()));
 
         // Build flow and trigger user authorization request.
