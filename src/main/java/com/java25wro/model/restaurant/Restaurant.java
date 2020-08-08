@@ -1,6 +1,7 @@
-package com.java25wro.model;
+package com.java25wro.model.restaurant;
 
 import com.java25wro.common.BaseEntity;
+import com.java25wro.model.meal.Meal;
 
 import javax.persistence.*;
 import java.util.HashSet;

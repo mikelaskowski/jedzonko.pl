@@ -1,6 +1,6 @@
-package com.java25wro.service;
+package com.java25wro.service.restaurant;
 
-import com.java25wro.model.Restaurant;
+import com.java25wro.model.restaurant.Restaurant;
 
 import java.util.Optional;
 import java.util.Set;

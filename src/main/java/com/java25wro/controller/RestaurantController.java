@@ -1,13 +1,12 @@
 package com.java25wro.controller;
 
-import com.java25wro.model.Restaurant;
-import com.java25wro.model.RestaurantDTO;
-import com.java25wro.service.IRestaurantService;
+import com.java25wro.model.restaurant.Restaurant;
+import com.java25wro.model.restaurant.RestaurantDTO;
+import com.java25wro.service.restaurant.IRestaurantService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -27,15 +26,14 @@ public class RestaurantController {
     }
 
     @PostMapping
-
     public void addRestaurant(@RequestBody Restaurant restaurant) {
       restaurantService.save(restaurant);
     }
 
-    @GetMapping("/restaurant/{name}")
-    public RestaurantDTO findByName(@PathVariable Long id){
-        Optional<Restaurant> byName = restaurantService.findById(id);
-        return byName
+    @GetMapping("/restaurant/{id}")
+    public RestaurantDTO findById(@PathVariable Long id){
+        Optional<Restaurant> byId = restaurantService.findById(id);
+        return byId
                 .map(this::convertToDto)
                 .orElseThrow(RuntimeException::new);
     }

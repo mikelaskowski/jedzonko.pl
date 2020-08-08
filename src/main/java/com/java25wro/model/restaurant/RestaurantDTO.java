@@ -1,4 +1,4 @@
-package com.java25wro.model;
+package com.java25wro.model.restaurant;
 
 public class RestaurantDTO {
 

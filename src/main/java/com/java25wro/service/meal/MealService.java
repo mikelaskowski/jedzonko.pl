@@ -1,6 +1,6 @@
 package com.java25wro.service.meal;
 
-import com.java25wro.model.Meal;
+import com.java25wro.model.meal.Meal;
 import com.java25wro.repository.MealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

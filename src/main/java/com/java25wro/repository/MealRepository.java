@@ -1,6 +1,6 @@
 package com.java25wro.repository;
 
-import com.java25wro.model.Meal;
+import com.java25wro.model.meal.Meal;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

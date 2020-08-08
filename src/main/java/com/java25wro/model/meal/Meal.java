@@ -1,6 +1,8 @@
-package com.java25wro.model;
+package com.java25wro.model.meal;
 
 import com.java25wro.common.BaseEntity;
+import com.java25wro.model.OrderedMeals;
+import com.java25wro.model.restaurant.Restaurant;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

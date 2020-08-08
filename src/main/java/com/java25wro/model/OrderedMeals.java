@@ -1,5 +1,7 @@
 package com.java25wro.model;
 
+import com.java25wro.model.meal.Meal;
+
 import javax.persistence.*;
 
 @Entity

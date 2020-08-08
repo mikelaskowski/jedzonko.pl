@@ -1,6 +1,6 @@
 package com.java25wro.service.meal;
 
-import com.java25wro.model.Meal;
+import com.java25wro.model.meal.Meal;
 
 import java.util.List;
 import java.util.Set;

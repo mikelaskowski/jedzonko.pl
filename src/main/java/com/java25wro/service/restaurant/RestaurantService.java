@@ -1,6 +1,6 @@
-package com.java25wro.service;
+package com.java25wro.service.restaurant;
 
-import com.java25wro.model.Restaurant;
+import com.java25wro.model.restaurant.Restaurant;
 import com.java25wro.repository.IRestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Service
 public class RestaurantService implements IRestaurantService {
+
     private final IRestaurantRepository repository;
 
     @Autowired

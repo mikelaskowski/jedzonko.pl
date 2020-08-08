@@ -1,6 +1,6 @@
 package com.java25wro.repository;
 
-import com.java25wro.model.Restaurant;
+import com.java25wro.model.restaurant.Restaurant;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
