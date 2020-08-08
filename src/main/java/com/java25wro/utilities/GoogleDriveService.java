@@ -1,5 +1,6 @@
 package com.java25wro.utilities;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -17,9 +18,12 @@ import com.google.api.services.drive.model.File;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class GoogleDriveService {
@@ -75,6 +79,5 @@ public class GoogleDriveService {
         //https://stackoverflow.com/questions/11593116/using-pdfbox-how-do-i-retrieve-contents-of-pddocument-as-a-byte-array
         //https://developers.google.com/api-client-library/java/google-api-java-client/media-upload
     }
-
 
 }
