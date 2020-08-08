@@ -9,8 +9,8 @@ import java.util.Set;
 
 @Repository
 public interface IRestaurantRepository extends CrudRepository<Restaurant, Long> {
-    Set<Restaurant> findAllByDeletedFalse();
 
-    Optional<Restaurant> findByRestaurantName(String name);
+    Set<Restaurant> findAllByDeletedFalse();
+    Optional<Restaurant> findByRestaurantId(Long id);
 }
 
