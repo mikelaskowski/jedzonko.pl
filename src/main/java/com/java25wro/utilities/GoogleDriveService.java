@@ -67,7 +67,7 @@ public class GoogleDriveService {
                 Charset.defaultCharset()));*/
 
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                new StringReader(System.getenv("GOOGLE_APPLICATION_CREDENTIALS")));
+                new StringReader(System.getenv("GOOGLE_CREDENTIALS")));
 
         // Build flow and trigger user authorization request.
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
