@@ -18,6 +18,7 @@ import com.google.api.services.drive.model.File;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
@@ -58,11 +59,13 @@ public class GoogleDriveService {
      */
     private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
         // Load client secrets.
-        InputStream in = GoogleDriveService.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
+        InputStream in = GoogleDriveService.class.getResourceAsStream("GOOGLE_APPLICATION_CREDENTIALS");
         if (in == null) {
-            throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
+            throw new FileNotFoundException("Resource not found: " + "GOOGLE_APPLICATION_CREDENTIALS");
         }
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
+        JsonFactory factory = new JacksonFactory();
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(factory, new InputStreamReader(in,
+                Charset.defaultCharset()));
 
         // Build flow and trigger user authorization request.
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
