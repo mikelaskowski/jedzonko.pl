@@ -21,7 +21,7 @@ public class MealController {
         this.mealService = mealService;
     }
 
-    @GetMapping(value = "")
+    @GetMapping
     public List<Meal> findAll() {
         return mealService.findAll();
     }
@@ -36,16 +36,15 @@ public class MealController {
         return mealService.findMealByMealId(mealId);
     }
 
-    @PostMapping(value = "")
+    @PostMapping
     public Meal createMeal(@RequestBody Meal newMeal){
         mealService.createMeal(newMeal);
         return newMeal;
     }
 
     @DeleteMapping(value = "/{mealId}")
-    public String deleteMeal(@PathVariable Long mealId){
+    public void deleteMeal(@PathVariable Long mealId){
         mealService.deleteMeal(mealId);
-        return "Delete meal with";
     }
 
 }

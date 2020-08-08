@@ -12,26 +12,32 @@ import java.util.Set;
 @CrossOrigin(value = "*")
 @RequestMapping(value = "/restaurants")
 public class RestaurantController {
+
     private final IRestaurantService restaurantService;
+
     @Autowired
     public RestaurantController(IRestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
-    @PostMapping("(restaurant)")
+
+    @PostMapping
     public void addRestaurant(@RequestBody Restaurant restaurant){
         this.restaurantService.save(restaurant);
     }
-    @GetMapping("/restaurant/{name}")
-    public Optional<Restaurant> findByName(@PathVariable String name){
-        return restaurantService.findByName(name);
+
+    @GetMapping("/{id}")
+    public Optional<Restaurant> findByRestaurantId(@PathVariable Long id){
+        return restaurantService.findByRestaurantId(id);
     }
+
     @GetMapping
     public Set<Restaurant> getAll(){
         return restaurantService.findAll();
     }
-    @DeleteMapping("/(name)")
-    public void delete(@PathVariable String name){
-        Restaurant byName = restaurantService.findByName(name).orElse(new Restaurant("0","0"));
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        Restaurant byName = restaurantService.findByRestaurantId(id).orElse(new Restaurant("0","0"));
         restaurantService.delete(byName);
     }
 

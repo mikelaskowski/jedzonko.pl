@@ -88,7 +88,7 @@ public class Meal extends BaseEntity {
         return restaurant;
     }
 
-    public void setRestaurantId(Restaurant restaurant) {
+    public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
 

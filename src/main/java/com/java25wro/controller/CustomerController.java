@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @CrossOrigin(value = "*")
 @RequestMapping("/customers")
@@ -16,14 +18,14 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping(value = "/all")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public Iterable<Customer> getCustomers() {
         Iterable<Customer> customers = customerRepository.findAll();
         return customers;
     }
 
-    @PostMapping("/add")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Customer add(@RequestBody Customer customer) {
         return customerRepository.save(customer);
@@ -31,10 +33,11 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public Customer findById(@PathVariable Long id) {
-        return customerRepository.findById(id).orElse(null);
+        return service.findById(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         service.deleteById(id);
     }
